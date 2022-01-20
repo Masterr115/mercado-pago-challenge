@@ -4,6 +4,7 @@ const exphbs = require("express-handlebars");
 const port = process.env.PORT || 3000;
 const MercadoPago = require("mercadopago");
 const uuid = require("uuid");
+const cors = require("cors");
 
 const app = express();
 
@@ -12,6 +13,7 @@ MercadoPago.configure({
   access_token: process.env.MP_ACCESS_TOKEN,
 });
 
+app.use(cors());
 app.engine("handlebars", exphbs());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
