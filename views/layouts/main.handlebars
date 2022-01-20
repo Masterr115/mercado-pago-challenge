@@ -150,8 +150,8 @@
 
   <script>
     async function newPurchase(name, price, unit, img) { const response = await
-    axios.post('http://localhost:3000/newPurchase', {name, price, unit, img})
-    window.location.href = response.data.redirect }
+    axios.post('https://mercado-pago-nodejs-challenge.herokuapp.com/newPurchase',
+    {name, price, unit, img}) window.location.href = response.data.redirect }
 
   </script>
 
