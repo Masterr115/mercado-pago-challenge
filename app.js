@@ -86,7 +86,7 @@ app.post("/newPurchase", async function (req, res) {
       ],
       installments: 6,
     },
-    notification_url: process.env.APP_URL + "/webhook",
+    notification_url: process.env.APP_URL + "/webhook?source_news=webhook",
     statement_descriptor: "Teste",
     external_reference: uuid.v4(),
   };
@@ -96,7 +96,11 @@ app.post("/newPurchase", async function (req, res) {
   res.json({ redirect: preference.body.init_point });
 });
 
-app.post("/webhook");
+app.post("/webhook", async function (req, res) {
+  console.log(req.body);
+  console.log(req.query);
+  return res.status(200);
+});
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
