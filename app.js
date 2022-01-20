@@ -8,8 +8,8 @@ const uuid = require("uuid");
 const app = express();
 
 MercadoPago.configure({
-  integrator_id: PROCESS.env.MP_INTEGRATOR_ID,
-  access_token: PROCESS.env.MP_ACCESS_TOKEN,
+  integrator_id: process.env.MP_INTEGRATOR_ID,
+  access_token: process.env.MP_ACCESS_TOKEN,
 });
 
 app.engine("handlebars", exphbs());
