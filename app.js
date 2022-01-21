@@ -88,7 +88,7 @@ app.post("/newPurchase", async function (req, res) {
     },
     notification_url: process.env.APP_URL + "/webhook?source_news=webhook",
     statement_descriptor: "Teste",
-    external_reference: uuid.v4(),
+    external_reference: "andre.contiero@yahoo.com.br",
   };
 
   const preference = await MercadoPago.preferences.create(order);
